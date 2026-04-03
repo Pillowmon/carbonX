@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom' // <-- IMPORT THIS
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/carbonX"> {/* <-- WRAP <App /> HERE */}
+    <BrowserRouter> {/* <-- WRAP <App /> HERE */}
       <App />
     </BrowserRouter>
   </StrictMode>,
