@@ -15,7 +15,9 @@ public class CorsConfig {
                         .allowedOriginPatterns(
                             "https://carbonx-five.vercel.app",
                             "https://www.carbonx.app",
-                            "https://*.vercel.app"
+                            "https://*.vercel.app",
+                            "https://carbonx-ecapybara.com",
+                            "https://www.carbonx-ecapybara.com"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
