@@ -15,7 +15,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    private final String DATABASE_API_URL = "http://localhost:8529/";
+    //private final String DATABASE_API_URL = "http://localhost:8529/";
+    @Value("${arangodb.spring.data.hosts}")
+    private String arangoHosts;
+ 
     @Value("${arangodb.spring.data.user}")
     private String username;
     @Value("${arangodb.spring.data.password}")
@@ -24,7 +27,7 @@ public class WebClientConfig {
     @Bean
     public WebClient webClient() {
         return WebClient.builder()
-                .baseUrl(DATABASE_API_URL)
+                .baseUrl("http://" + arangoHosts + "/")
                 .exchangeStrategies(ExchangeStrategies
                     .builder()
                     .codecs(codecs -> codecs
